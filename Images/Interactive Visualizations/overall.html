@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.16.3"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec ={
+  "config": {
+    "view": {"continuousWidth": 300, "continuousHeight": 300},
+    "axis": {"labelFontSize": 12}
+  },
+  "data": {"name": "data-baf224b9983e2ec7ee553860e858556b"},
+  "mark": {"type": "bar"},
+  "encoding": {
+    "color": {"field": "Unique Values of Selected Column", "type": "nominal"},
+    "x": {"field": "Count", "type": "quantitative"},
+    "y": {"field": "Unique Values of Selected Column", "type": "nominal"}
+  },
+  "height": 500,
+  "params": [
+    {
+      "name": "param_1",
+      "bind": {
+        "input": "select",
+        "options": [
+          "PERP_RACE",
+          "LAW_CAT_CD",
+          "ARREST_BORO",
+          "AGE_GROUP",
+          "PERP_SEX"
+        ],
+        "labels": [
+          "PERP_RACE",
+          "LAW_CAT_CD",
+          "ARREST_BORO",
+          "AGE_GROUP",
+          "PERP_SEX"
+        ],
+        "name": "Selected Column: "
+      },
+      "value": "PERP_RACE"
+    }
+  ],
+  "title": "Overall Visualization of Multiple Attributes of The Data",
+  "transform": [{"filter": "(datum.Col_Name === param_1)"}],
+  "width": 600,
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.16.3.json",
+  "datasets": {
+    "data-baf224b9983e2ec7ee553860e858556b": [
+      {
+        "Col_Name": "PERP_RACE",
+        "Unique Values of Selected Column": "AMERICAN INDIAN/ALASKAN NATIVE",
+        "Count": 684
+      },
+      {
+        "Col_Name": "PERP_RACE",
+        "Unique Values of Selected Column": "ASIAN / PACIFIC ISLANDER",
+        "Count": 11726
+      },
+      {
+        "Col_Name": "PERP_RACE",
+        "Unique Values of Selected Column": "BLACK",
+        "Count": 105235
+      },
+      {
+        "Col_Name": "PERP_RACE",
+        "Unique Values of Selected Column": "BLACK HISPANIC",
+        "Count": 21746
+      },
+      {
+        "Col_Name": "PERP_RACE",
+        "Unique Values of Selected Column": "UNKNOWN",
+        "Count": 2501
+      },
+      {
+        "Col_Name": "PERP_RACE",
+        "Unique Values of Selected Column": "WHITE",
+        "Count": 20859
+      },
+      {
+        "Col_Name": "PERP_RACE",
+        "Unique Values of Selected Column": "WHITE HISPANIC",
+        "Count": 56503
+      },
+      {
+        "Col_Name": "LAW_CAT_CD",
+        "Unique Values of Selected Column": "F",
+        "Count": 96476
+      },
+      {
+        "Col_Name": "LAW_CAT_CD",
+        "Unique Values of Selected Column": "I",
+        "Count": 240
+      },
+      {
+        "Col_Name": "LAW_CAT_CD",
+        "Unique Values of Selected Column": "M",
+        "Count": 121247
+      },
+      {
+        "Col_Name": "LAW_CAT_CD",
+        "Unique Values of Selected Column": "V",
+        "Count": 1291
+      },
+      {
+        "Col_Name": "ARREST_BORO",
+        "Unique Values of Selected Column": "B",
+        "Count": 51948
+      },
+      {
+        "Col_Name": "ARREST_BORO",
+        "Unique Values of Selected Column": "K",
+        "Count": 61663
+      },
+      {
+        "Col_Name": "ARREST_BORO",
+        "Unique Values of Selected Column": "M",
+        "Count": 50193
+      },
+      {
+        "Col_Name": "ARREST_BORO",
+        "Unique Values of Selected Column": "Q",
+        "Count": 45572
+      },
+      {
+        "Col_Name": "ARREST_BORO",
+        "Unique Values of Selected Column": "S",
+        "Count": 9878
+      },
+      {
+        "Col_Name": "AGE_GROUP",
+        "Unique Values of Selected Column": "18-24",
+        "Count": 38450
+      },
+      {
+        "Col_Name": "AGE_GROUP",
+        "Unique Values of Selected Column": "25-44",
+        "Count": 126033
+      },
+      {
+        "Col_Name": "AGE_GROUP",
+        "Unique Values of Selected Column": "45-64",
+        "Count": 42820
+      },
+      {
+        "Col_Name": "AGE_GROUP",
+        "Unique Values of Selected Column": "65+",
+        "Count": 3571
+      },
+      {
+        "Col_Name": "AGE_GROUP",
+        "Unique Values of Selected Column": "<18",
+        "Count": 8380
+      },
+      {
+        "Col_Name": "PERP_SEX",
+        "Unique Values of Selected Column": "F",
+        "Count": 38261
+      },
+      {
+        "Col_Name": "PERP_SEX",
+        "Unique Values of Selected Column": "M",
+        "Count": 177575
+      },
+      {
+        "Col_Name": "PERP_SEX",
+        "Unique Values of Selected Column": "U",
+        "Count": 3418
+      }
+    ]
+  }
+};
+var embedOpt = {"mode": "vega-lite"};
+function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>

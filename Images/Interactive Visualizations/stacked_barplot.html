@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@5.16.3"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec ={
+  "config": {"view": {"continuousWidth": 300, "continuousHeight": 300}},
+  "data": {"name": "data-7621fdd0ecf9e2ee629b531c8904e60e"},
+  "mark": {"type": "bar"},
+  "encoding": {
+    "color": {
+      "field": "ARREST_BORO",
+      "legend": null,
+      "scale": {"domain": [null, "M", "K", "Q", "B", "S"]},
+      "type": "nominal"
+    },
+    "tooltip": [
+      {"field": "OFNS_DESC", "type": "nominal"},
+      {"field": "count", "type": "quantitative"}
+    ],
+    "x": {
+      "field": "OFNS_DESC",
+      "sort": "-y",
+      "title": "Offense",
+      "type": "nominal"
+    },
+    "y": {"field": "count", "title": "Count", "type": "quantitative"}
+  },
+  "height": 400,
+  "params": [
+    {
+      "name": "param_1",
+      "select": {"type": "point", "fields": ["ARREST_BORO"]},
+      "bind": {
+        "input": "select",
+        "options": [null, "M", "K", "Q", "B", "S"],
+        "labels": [
+          "All",
+          "Manhattan",
+          "Brooklyn",
+          "Queens",
+          "The Bronx",
+          "Staten Island"
+        ],
+        "name": "Region: "
+      }
+    }
+  ],
+  "title": "Top 10 Crimes by Frequency per Borough",
+  "transform": [{"filter": {"param": "param_1"}}],
+  "width": 400,
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.16.3.json",
+  "datasets": {
+    "data-7621fdd0ecf9e2ee629b531c8904e60e": [
+      {
+        "ARREST_BORO": "B",
+        "OFNS_DESC": "ASSAULT 3 & RELATED OFFENSES",
+        "count": 9062
+      },
+      {"ARREST_BORO": "B", "OFNS_DESC": "FELONY ASSAULT", "count": 5466},
+      {"ARREST_BORO": "B", "OFNS_DESC": "PETIT LARCENY", "count": 4930},
+      {
+        "ARREST_BORO": "B",
+        "OFNS_DESC": "VEHICLE AND TRAFFIC LAWS",
+        "count": 3369
+      },
+      {"ARREST_BORO": "B", "OFNS_DESC": "ROBBERY", "count": 3020},
+      {"ARREST_BORO": "B", "OFNS_DESC": "DANGEROUS DRUGS", "count": 3000},
+      {
+        "ARREST_BORO": "B",
+        "OFNS_DESC": "CRIMINAL MISCHIEF & RELATED OF",
+        "count": 2465
+      },
+      {
+        "ARREST_BORO": "B",
+        "OFNS_DESC": "MISCELLANEOUS PENAL LAW",
+        "count": 2308
+      },
+      {"ARREST_BORO": "B", "OFNS_DESC": "DANGEROUS WEAPONS", "count": 2089},
+      {"ARREST_BORO": "B", "OFNS_DESC": "GRAND LARCENY", "count": 1566},
+      {
+        "ARREST_BORO": "K",
+        "OFNS_DESC": "ASSAULT 3 & RELATED OFFENSES",
+        "count": 8907
+      },
+      {"ARREST_BORO": "K", "OFNS_DESC": "FELONY ASSAULT", "count": 5851},
+      {"ARREST_BORO": "K", "OFNS_DESC": "PETIT LARCENY", "count": 5183},
+      {
+        "ARREST_BORO": "K",
+        "OFNS_DESC": "MISCELLANEOUS PENAL LAW",
+        "count": 5151
+      },
+      {"ARREST_BORO": "K", "OFNS_DESC": "DANGEROUS DRUGS", "count": 4090},
+      {
+        "ARREST_BORO": "K",
+        "OFNS_DESC": "VEHICLE AND TRAFFIC LAWS",
+        "count": 3871
+      },
+      {"ARREST_BORO": "K", "OFNS_DESC": "DANGEROUS WEAPONS", "count": 3477},
+      {
+        "ARREST_BORO": "K",
+        "OFNS_DESC": "CRIMINAL MISCHIEF & RELATED OF",
+        "count": 3125
+      },
+      {"ARREST_BORO": "K", "OFNS_DESC": "ROBBERY", "count": 2920},
+      {"ARREST_BORO": "K", "OFNS_DESC": "GRAND LARCENY", "count": 2435},
+      {"ARREST_BORO": "M", "OFNS_DESC": "PETIT LARCENY", "count": 8061},
+      {
+        "ARREST_BORO": "M",
+        "OFNS_DESC": "ASSAULT 3 & RELATED OFFENSES",
+        "count": 6480
+      },
+      {"ARREST_BORO": "M", "OFNS_DESC": "DANGEROUS DRUGS", "count": 4809},
+      {"ARREST_BORO": "M", "OFNS_DESC": "GRAND LARCENY", "count": 4165},
+      {"ARREST_BORO": "M", "OFNS_DESC": "FELONY ASSAULT", "count": 3641},
+      {"ARREST_BORO": "M", "OFNS_DESC": "ROBBERY", "count": 2533},
+      {
+        "ARREST_BORO": "M",
+        "OFNS_DESC": "CRIMINAL MISCHIEF & RELATED OF",
+        "count": 2399
+      },
+      {
+        "ARREST_BORO": "M",
+        "OFNS_DESC": "MISCELLANEOUS PENAL LAW",
+        "count": 2021
+      },
+      {"ARREST_BORO": "M", "OFNS_DESC": "DANGEROUS WEAPONS", "count": 1591},
+      {
+        "ARREST_BORO": "M",
+        "OFNS_DESC": "VEHICLE AND TRAFFIC LAWS",
+        "count": 1360
+      },
+      {
+        "ARREST_BORO": "Q",
+        "OFNS_DESC": "ASSAULT 3 & RELATED OFFENSES",
+        "count": 7618
+      },
+      {"ARREST_BORO": "Q", "OFNS_DESC": "FELONY ASSAULT", "count": 4780},
+      {"ARREST_BORO": "Q", "OFNS_DESC": "PETIT LARCENY", "count": 4205},
+      {
+        "ARREST_BORO": "Q",
+        "OFNS_DESC": "MISCELLANEOUS PENAL LAW",
+        "count": 4036
+      },
+      {"ARREST_BORO": "Q", "OFNS_DESC": "DANGEROUS DRUGS", "count": 2753},
+      {
+        "ARREST_BORO": "Q",
+        "OFNS_DESC": "VEHICLE AND TRAFFIC LAWS",
+        "count": 2639
+      },
+      {
+        "ARREST_BORO": "Q",
+        "OFNS_DESC": "CRIMINAL MISCHIEF & RELATED OF",
+        "count": 2253
+      },
+      {"ARREST_BORO": "Q", "OFNS_DESC": "ROBBERY", "count": 2198},
+      {"ARREST_BORO": "Q", "OFNS_DESC": "GRAND LARCENY", "count": 1862},
+      {"ARREST_BORO": "Q", "OFNS_DESC": "DANGEROUS WEAPONS", "count": 1607},
+      {
+        "ARREST_BORO": "S",
+        "OFNS_DESC": "ASSAULT 3 & RELATED OFFENSES",
+        "count": 1339
+      },
+      {
+        "ARREST_BORO": "S",
+        "OFNS_DESC": "VEHICLE AND TRAFFIC LAWS",
+        "count": 1079
+      },
+      {
+        "ARREST_BORO": "S",
+        "OFNS_DESC": "MISCELLANEOUS PENAL LAW",
+        "count": 1057
+      },
+      {"ARREST_BORO": "S", "OFNS_DESC": "PETIT LARCENY", "count": 1024},
+      {"ARREST_BORO": "S", "OFNS_DESC": "FELONY ASSAULT", "count": 889},
+      {"ARREST_BORO": "S", "OFNS_DESC": "DANGEROUS DRUGS", "count": 805},
+      {
+        "ARREST_BORO": "S",
+        "OFNS_DESC": "CRIMINAL MISCHIEF & RELATED OF",
+        "count": 510
+      },
+      {"ARREST_BORO": "S", "OFNS_DESC": "GRAND LARCENY", "count": 378},
+      {"ARREST_BORO": "S", "OFNS_DESC": "ROBBERY", "count": 318},
+      {"ARREST_BORO": "S", "OFNS_DESC": "DANGEROUS WEAPONS", "count": 287}
+    ]
+  }
+};
+var embedOpt = {"mode": "vega-lite"};
+function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
